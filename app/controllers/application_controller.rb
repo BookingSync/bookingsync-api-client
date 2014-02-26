@@ -11,10 +11,14 @@ class ApplicationController < ActionController::Base
 
   def current_account_token
     @current_account_token ||= begin
+      token_options = {}
+      if current_account.oauth_refresh_token
+        token_options[:refresh_token] = current_account.oauth_refresh_token
+        token_options[:expires_at]    = current_account.expires_at
+      end
+
       token = OAuth2::AccessToken.new(oauth_client,
-        current_account.oauth_access_token,
-        refresh_token: current_account.oauth_refresh_token,
-        expires_at: current_account.oauth_expires_at.to_i)
+        current_account.oauth_access_token, token_options)
 
       if token.expired?
         token = token.refresh!
