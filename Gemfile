@@ -17,6 +17,9 @@ gem 'omniauth-bookingsync', git: 'https://github.com/grk/omniauth-bookingsync.gi
 
 gem 'dotenv-rails'
 
+gem 'shelly-dependencies'
+gem 'puma'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
