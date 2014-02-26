@@ -1,7 +1,6 @@
 GIT
-  remote: https://github.com/grk/omniauth-bookingsync.git
-  revision: c729fb896a95e396ee8322943aa56093d0f35ebb
-  branch: raw-info
+  remote: https://github.com/bookingsync/omniauth-bookingsync.git
+  revision: 68aa378a636748dd313437102569b511e68da702
   specs:
     omniauth-bookingsync (0.1.0)
       omniauth (~> 1.1)

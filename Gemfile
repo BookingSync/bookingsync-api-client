@@ -13,7 +13,7 @@ gem 'turbolinks'
 gem 'spring',        group: :development
 
 gem 'omniauth'
-gem 'omniauth-bookingsync', git: 'https://github.com/grk/omniauth-bookingsync.git', branch: 'raw-info'
+gem 'omniauth-bookingsync', git: 'https://github.com/bookingsync/omniauth-bookingsync.git'
 
 gem 'dotenv-rails'
 
