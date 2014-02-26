@@ -1,0 +1,38 @@
+<%= form_tag api_request_path, method: :get, class: "form-inline" do |f| %>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <tt>/api/v3/</tt>
+    </span>
+    <%= text_field_tag :api_path, params[:api_path], class: "form-control" %>
+    <span class="input-group-btn">
+      <%= submit_tag "Go", class: "btn btn-primary" %>
+    </span>
+  </div>
+<% end %>
+
+<hr>
+
+<% if @response %>
+  <div class="panel panel-default">
+    <div class="panel-heading">headers</div>
+    <div class="panel-body panel-body-code">
+      <pre><%= pretty_headers(@response) %></pre>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">body</div>
+    <div class="panel-body panel-body-code">
+      <pre><%= pretty_json(@response.body) %></pre>
+    </div>
+  </div>
+<% end %>
+
+<% if @error %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">error</div>
+    <div class="panel-body panel-body-code">
+      <pre><%= @error.inspect %></pre>
+    </div>
+  </div>
+<% end %>
