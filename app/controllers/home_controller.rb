@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_filter :authenticate_account!, except: :index
+
   def index
     redirect_to api_request_path if current_account
   end
@@ -11,5 +13,11 @@ class HomeController < ApplicationController
         @error = e
       end
     end
+  end
+
+  private
+
+  def authenticate_account!
+    redirect_to '/auth/bookingsync' unless current_account
   end
 end
