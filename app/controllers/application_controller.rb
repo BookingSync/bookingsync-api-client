@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  after_action :allow_bookingsync_iframe
+
   helper_method :current_account
 
   private
@@ -37,5 +39,9 @@ class ApplicationController < ActionController::Base
     client_options[:ssl] = {verify: false} if Rails.env.development?
     OAuth2::Client.new(ENV['BOOKINGSYNC_APP_ID'], ENV['BOOKINGSYNC_APP_SECRET'],
       client_options)
+  end
+
+  def allow_bookingsync_iframe
+    response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.bookingsync.com https://bookingsync.dev'
   end
 end
