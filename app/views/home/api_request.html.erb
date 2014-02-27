@@ -5,7 +5,7 @@
     </span>
     <%= text_field_tag :api_path, params[:api_path], class: "form-control" %>
     <span class="input-group-btn">
-      <%= submit_tag "Go", class: "btn btn-primary" %>
+      <%= submit_tag "Go", class: "btn btn-primary", data: {disable_with: "..."} %>
     </span>
   </div>
 <% end %>
