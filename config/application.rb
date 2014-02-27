@@ -19,14 +19,5 @@ module BookingsyncApiClient
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.middleware.use OmniAuth::Builder do
-      provider :bookingsync,
-        ENV['BOOKINGSYNC_APP_ID'],
-        ENV['BOOKINGSYNC_APP_SECRET'],
-        setup: -> (env) {
-          env['omniauth.strategy'].options[:client_options].site = ENV['BOOKINGSYNC_URL']
-          env['omniauth.strategy'].options[:client_options].ssl = {verify: false} if Rails.env.development?
-        }
-    end
   end
 end
