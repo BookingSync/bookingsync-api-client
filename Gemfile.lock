@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/bookingsync/bookingsync-engine
-  revision: 5baf4bb10f7038f9dc620180ff45a23407025bf7
+  revision: 5ec325b79aefe76fcece537be2cbbce9c23a9b2b
+  branch: master
   specs:
     bookingsync-engine (0.0.1)
       omniauth-bookingsync (~> 0.1.0)

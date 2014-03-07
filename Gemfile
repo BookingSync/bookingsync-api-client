@@ -12,7 +12,9 @@ gem 'turbolinks'
 
 gem 'spring',        group: :development
 
-gem 'bookingsync-engine', git: 'https://github.com/bookingsync/bookingsync-engine'
+gem 'bookingsync-engine',
+  git: 'https://github.com/bookingsync/bookingsync-engine',
+  branch: :master
 
 gem 'dotenv-rails'
 

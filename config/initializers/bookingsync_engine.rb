@@ -1,0 +1,1 @@
+BookingSync::Engine.standalone!
