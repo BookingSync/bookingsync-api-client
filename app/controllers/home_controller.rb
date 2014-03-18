@@ -14,10 +14,4 @@ class HomeController < ApplicationController
       end
     end
   end
-
-  private
-
-  def authenticate_account!
-    redirect_to '/auth/bookingsync' unless current_account
-  end
 end
